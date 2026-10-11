@@ -4,145 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechnicRail.pl | Parts, Repairs, Engineering</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f6f5f0;
-            --grid-color: rgba(0, 0, 0, 0.06);
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --accent-orange: #d97706;
+            --bg-paper: #f4f3ee;
+            --grid-line: rgba(24, 24, 27, 0.05);
+            --ink: #18181b;
+            --ink-muted: #52525b;
+            --ink-subtle: #71717a;
+            --accent-orange: #f97316;
+            --border-line: #18181b;
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            background-image: 
-                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-            background-size: 40px 40px;
-            line-height: 1.5;
+
+        html {
+            scroll-behavior: smooth;
         }
+
+        body {
+            background-color: var(--bg-paper);
+            color: var(--ink);
+            font-family: 'Inter', sans-serif;
+            background-image: 
+                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+            background-size: 32px 32px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* HEADER & BLUEPRINT TABS */
         header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 3rem;
-            border-bottom: 2px solid var(--text-main);
-            background: var(--bg-color);
+            align-items: stretch;
+            border-bottom: 1px solid var(--border-line);
+            background: var(--bg-paper);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 50;
         }
+
+        .header-brand {
+            padding: 1.25rem 2.5rem;
+            display: flex;
+            align-items: center;
+        }
+
         .logo {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--text-main);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
             text-decoration: none;
+            color: var(--ink);
         }
+
         .logo span {
             color: var(--accent-orange);
         }
-        .nav-links {
+
+        nav {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .nav-item {
             display: flex;
             align-items: center;
-            gap: 2rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
+            padding: 0 2rem;
+            border-left: 1px solid var(--border-line);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
+            text-decoration: none;
+            color: var(--ink);
+            transition: background 0.15s;
         }
-        .nav-links a.btn-contact {
-            background-color: var(--accent-orange);
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            transition: background 0.2s;
+
+        .nav-item:hover {
+            background: rgba(24, 24, 27, 0.04);
         }
-        .nav-links a.btn-contact:hover {
-            background-color: #b45309;
+
+        .nav-item.contact-tab {
+            background: var(--accent-orange);
+            color: #ffffff;
         }
+
+        .nav-item.contact-tab:hover {
+            background: #ea580c;
+        }
+
+        /* HERO SECTION */
         .hero {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            border-bottom: 2px solid var(--text-main);
-            min-height: 75vh;
+            grid-template-columns: 1.2fr 0.8fr;
+            border-bottom: 1px solid var(--border-line);
         }
+
         .hero-left {
-            padding: 5rem 3rem;
+            padding: 5rem 3rem 4rem 3rem;
+            border-right: 1px solid var(--border-line);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            border-right: 2px solid var(--text-main);
         }
-        .breadcrumb {
+
+        .category-tag {
+            font-family: 'Space Mono', monospace;
             font-size: 0.75rem;
-            font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+            color: var(--ink-subtle);
+            margin-bottom: 2rem;
         }
+
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 4rem;
-            line-height: 1;
+            font-size: 4.5rem;
             font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
         }
+
         .hero h1 span {
-            display: block;
             color: transparent;
-            -webkit-text-stroke: 1.5px var(--text-main);
+            -webkit-text-stroke: 1.5px var(--ink);
         }
-        .hero p {
+
+        .hero-description {
             font-size: 1.05rem;
-            color: var(--text-muted);
+            line-height: 1.6;
+            color: var(--ink-muted);
             max-width: 500px;
             margin-bottom: 2.5rem;
         }
-        .hero-buttons {
+
+        .hero-actions {
             display: flex;
             gap: 1rem;
         }
+
         .btn {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 1.75rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            padding: 0.9rem 1.8rem;
             text-decoration: none;
-            border: 2px solid var(--text-main);
-            cursor: pointer;
-            transition: all 0.2s;
+            border: 1px solid var(--border-line);
+            transition: all 0.15s;
         }
-        .btn-dark {
-            background-color: var(--text-main);
-            color: #fff;
+
+        .btn-solid {
+            background: var(--ink);
+            color: #ffffff;
         }
-        .btn-dark:hover {
-            background-color: #334155;
+
+        .btn-solid:hover {
+            background: #27272a;
         }
-        .btn-light {
-            background-color: transparent;
-            color: var(--text-main);
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--ink);
         }
-        .btn-light:hover {
-            background-color: rgba(0,0,0,0.05);
+
+        .btn-ghost:hover {
+            background: rgba(24, 24, 27, 0.05);
         }
+
         .hero-right {
             padding: 3rem;
             display: flex;
@@ -150,166 +197,230 @@
             justify-content: center;
             align-items: center;
         }
-        .image-frame {
-            border: 2px solid var(--text-main);
+
+        .blueprint-card {
+            border: 1px solid var(--border-line);
             padding: 10px;
-            background: #fff;
-            box-shadow: 8px 8px 0px rgba(15, 23, 42, 0.1);
-            max-width: 450px;
+            background: var(--bg-paper);
             width: 100%;
+            max-width: 480px;
         }
-        .image-frame img {
+
+        .blueprint-card img {
             width: 100%;
             height: auto;
             display: block;
+            border: 1px solid rgba(24, 24, 27, 0.1);
         }
-        .image-caption {
+
+        .blueprint-caption {
             display: flex;
             justify-content: space-between;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.75rem;
             margin-top: 0.75rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            color: var(--ink-subtle);
         }
-        .section-header {
+
+        /* OFFER SECTION (#OFERTA) */
+        .section-bar {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            padding: 3rem;
-            border-bottom: 2px solid var(--text-main);
+            padding: 2.5rem 3rem;
+            border-bottom: 1px solid var(--border-line);
         }
-        .section-header h2 {
+
+        .section-bar h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.75rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.02em;
         }
-        .item-count {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.85rem;
-            color: var(--text-muted);
+
+        .section-count {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-subtle);
         }
+
+        .offer-table {
+            list-style: none;
+        }
+
         .offer-row {
             display: grid;
-            grid-template-columns: 100px 1fr auto;
+            grid-template-columns: 80px 240px 1fr 60px;
             align-items: center;
-            padding: 2.5rem 3rem;
-            border-bottom: 2px solid var(--text-main);
+            gap: 2rem;
+            padding: 2.25rem 3rem;
+            border-bottom: 1px solid var(--border-line);
             text-decoration: none;
             color: inherit;
-            transition: background 0.2s;
+            transition: background 0.15s;
         }
+
         .offer-row:hover {
-            background-color: rgba(0,0,0,0.02);
+            background: rgba(24, 24, 27, 0.03);
         }
+
+        .offer-row:hover .offer-arrow {
+            transform: translateX(4px);
+        }
+
         .offer-code {
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--accent-orange);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
             font-weight: 700;
-            font-size: 0.9rem;
+            color: var(--accent-orange);
+            letter-spacing: 0.05em;
         }
-        .offer-content h3 {
+
+        .offer-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-        .offer-content p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            max-width: 700px;
-        }
-        .offer-arrow {
             font-size: 1.5rem;
-            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
         }
-        .info-section {
-            padding: 5rem 3rem;
-            border-bottom: 2px solid var(--text-main);
+
+        .offer-desc {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--ink-muted);
+        }
+
+        .offer-arrow {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.5rem;
+            text-align: right;
+            transition: transform 0.2s ease;
+        }
+
+        /* MANIFESTO / DEPOT SECTION */
+        .manifesto {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-        }
-        .info-section h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.2rem;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
-        .info-section p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
-        }
-        .contact-section {
             padding: 5rem 3rem;
-            max-width: 800px;
-            margin: 0 auto;
+            border-bottom: 1px solid var(--border-line);
         }
-        .contact-box {
-            background: #fff;
-            border: 2px solid var(--text-main);
-            padding: 3rem;
-            box-shadow: 10px 10px 0px rgba(15, 23, 42, 0.1);
-        }
-        .contact-details {
-            margin-bottom: 2rem;
+
+        .manifesto h2 {
             font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
         }
-        .contact-details dt {
+
+        .manifesto-body {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--ink-muted);
+        }
+
+        .manifesto-body p + p {
+            margin-top: 1.5rem;
+        }
+
+        /* CONTACT SECTION */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid var(--border-line);
+        }
+
+        .contact-cell {
+            padding: 3rem;
+            border-right: 1px solid var(--border-line);
+        }
+
+        .contact-cell:last-child {
+            border-right: none;
+        }
+
+        .contact-label {
+            font-family: 'Space Mono', monospace;
             font-size: 0.75rem;
             text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            margin-top: 1rem;
+            letter-spacing: 0.1em;
+            color: var(--ink-subtle);
+            margin-bottom: 0.75rem;
         }
-        .contact-details dd {
-            font-size: 1.2rem;
+
+        .contact-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
             font-weight: 600;
-            color: var(--text-main);
         }
-        .contact-details dd a {
-            color: var(--text-main);
+
+        .contact-value a {
+            color: var(--ink);
             text-decoration: none;
         }
-        .contact-details dd a:hover {
+
+        .contact-value a:hover {
             color: var(--accent-orange);
         }
+
+        /* FOOTER */
         footer {
-            padding: 2.5rem 3rem;
-            border-top: 2px solid var(--text-main);
             display: flex;
             justify-content: space-between;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            background: var(--bg-color);
+            align-items: center;
+            padding: 2rem 3rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--ink-subtle);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
+
+        /* MOBILE RESPONSIVE */
         @media (max-width: 900px) {
-            .hero, .info-section {
+            .hero {
                 grid-template-columns: 1fr;
             }
-            .hero-left, .info-section {
+            .hero-left {
                 border-right: none;
-                border-bottom: 2px solid var(--text-main);
+                border-bottom: 1px solid var(--border-line);
                 padding: 3rem 1.5rem;
+            }
+            .hero h1 {
+                font-size: 3rem;
             }
             .hero-right {
-                padding: 3rem 1.5rem;
-            }
-            header {
-                padding: 1rem 1.5rem;
-            }
-            .nav-links {
-                display: none;
+                padding: 2rem 1.5rem;
             }
             .offer-row {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 0.75rem;
                 padding: 2rem 1.5rem;
             }
-            .section-header, .info-section, .contact-section, footer {
+            .offer-arrow {
+                display: none;
+            }
+            .manifesto {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 3rem 1.5rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-cell {
+                border-right: none;
+                border-bottom: 1px solid var(--border-line);
+                padding: 2rem 1.5rem;
+            }
+            .section-bar, footer {
                 padding: 2rem 1.5rem;
             }
             footer {
@@ -317,34 +428,43 @@
                 gap: 1rem;
                 text-align: center;
             }
+            .header-brand {
+                padding: 1rem 1.5rem;
+            }
+            .nav-item {
+                padding: 0 1rem;
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <header id="top">
-        <a href="#top" class="logo">TECHNICRAIL<span>.PL</span></a>
-        <nav class="nav-links">
-            <a href="#oferta">01 Offer</a>
-            <a href="#firma">02 Company</a>
-            <a href="#kontakt" class="btn-contact">03 Contact</a>
+        <div class="header-brand">
+            <a href="#top" class="logo">TechnicRail<span>.pl</span></a>
+        </div>
+        <nav>
+            <a href="#oferta" class="nav-item">01 Offer</a>
+            <a href="#firma" class="nav-item">02 Company</a>
+            <a href="#kontakt" class="nav-item contact-tab">03 Contact</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-left">
-            <span class="breadcrumb">Railway technology / Poland</span>
+            <p class="category-tag">Railway technology / Poland</p>
             <h1>Parts.<br>Repairs.<br><span>Engineering.</span></h1>
-            <p>We supply, repair, manufacture and design for rail vehicles. One workshop, one team, one point of contact.</p>
-            <div class="hero-buttons">
-                <a href="#kontakt" class="btn btn-dark">Send an inquiry</a>
-                <a href="#oferta" class="btn btn-light">See the offer</a>
+            <p class="hero-description">We supply, repair, manufacture and design for rail vehicles. One workshop, one team, one point of contact.</p>
+            <div class="hero-actions">
+                <a href="#kontakt" class="btn btn-solid">Send an inquiry</a>
+                <a href="#oferta" class="btn btn-ghost">See the offer</a>
             </div>
         </div>
         <div class="hero-right">
-            <div class="image-frame">
-                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80" alt="Rail vehicle in the TechnicRail workshop">
-                <div class="image-caption">
+            <div class="blueprint-card">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="Rail vehicle in the TechnicRail workshop">
+                <div class="blueprint-caption">
                     <span>Fig. 1 — Workshop</span>
                     <span>Scale 1:1</span>
                 </div>
@@ -352,82 +472,77 @@
         </div>
     </section>
 
-    <div class="section-header" id="oferta">
+    <div class="section-bar" id="oferta">
         <h2>Offer</h2>
-        <span class="item-count">05 items</span>
+        <span class="section-count">05 items</span>
     </div>
 
-    <a href="#kontakt" class="offer-row">
-        <span class="offer-code">TR-01</span>
-        <div class="offer-content">
-            <h3>Spare parts</h3>
-            <p>Components for rolling stock: bogie parts, wheelsets, brake equipment, couplers, interior fittings. Sourced, stocked and shipped.</p>
-        </div>
-        <span class="offer-arrow">→</span>
-    </a>
+    <div class="offer-table">
+        <a href="#kontakt" class="offer-row">
+            <span class="offer-code">TR-01</span>
+            <span class="offer-title">Spare parts</span>
+            <p class="offer-desc">Components for rolling stock: bogie parts, wheelsets, brake equipment, couplers, interior fittings. Sourced, stocked and shipped.</p>
+            <span class="offer-arrow">→</span>
+        </a>
 
-    <a href="#kontakt" class="offer-row">
-        <span class="offer-code">TR-02</span>
-        <div class="offer-content">
-            <h3>Service & repair</h3>
-            <p>Maintenance, overhaul and repair of vehicles and assemblies — in our workshop or at your depot.</p>
-        </div>
-        <span class="offer-arrow">→</span>
-    </a>
+        <a href="#kontakt" class="offer-row">
+            <span class="offer-code">TR-02</span>
+            <span class="offer-title">Service & repair</span>
+            <p class="offer-desc">Maintenance, overhaul and repair of vehicles and assemblies — in our workshop or at your depot.</p>
+            <span class="offer-arrow">→</span>
+        </a>
 
-    <a href="#kontakt" class="offer-row">
-        <span class="offer-code">TR-03</span>
-        <div class="offer-content">
-            <h3>Production</h3>
-            <p>Machining, welding and assembly of steel structures and mechanical parts, made to drawing.</p>
-        </div>
-        <span class="offer-arrow">→</span>
-    </a>
+        <a href="#kontakt" class="offer-row">
+            <span class="offer-code">TR-03</span>
+            <span class="offer-title">Production</span>
+            <p class="offer-desc">Machining, welding and assembly of steel structures and mechanical parts, made to drawing.</p>
+            <span class="offer-arrow">→</span>
+        </a>
 
-    <a href="#kontakt" class="offer-row">
-        <span class="offer-code">TR-04</span>
-        <div class="offer-content">
-            <h3>Solutions</h3>
-            <p>Modernization, retrofit and technical support for operators and manufacturers.</p>
-        </div>
-        <span class="offer-arrow">→</span>
-    </a>
+        <a href="#kontakt" class="offer-row">
+            <span class="offer-code">TR-04</span>
+            <span class="offer-title">Solutions</span>
+            <p class="offer-desc">Modernization, retrofit and technical support for operators and manufacturers.</p>
+            <span class="offer-arrow">→</span>
+        </a>
 
-    <a href="#kontakt" class="offer-row">
-        <span class="offer-code">TR-05</span>
-        <div class="offer-content">
-            <h3>CAD</h3>
-            <p>3D models, 2D documentation and reverse engineering of worn or discontinued parts.</p>
-        </div>
-        <span class="offer-arrow">→</span>
-    </a>
+        <a href="#kontakt" class="offer-row">
+            <span class="offer-code">TR-05</span>
+            <span class="offer-title">CAD</span>
+            <p class="offer-desc">3D models, 2D documentation and reverse engineering of worn or discontinued parts.</p>
+            <span class="offer-arrow">→</span>
+        </a>
+    </div>
 
-    <section class="info-section" id="firma">
+    <section class="manifesto" id="firma">
         <h2>Built around the depot, not the brochure.</h2>
-        <div>
+        <div class="manifesto-body">
             <p>TechnicRail works with carriers, maintenance companies and manufacturers. When a vehicle is standing still, we find the part, make it if it no longer exists, and fit it.</p>
             <p>Our CAD department turns a worn sample into a full drawing, and our production floor turns the drawing into a finished component.</p>
         </div>
     </section>
 
-    <section class="contact-section" id="kontakt">
-        <div class="section-header" style="padding: 0 0 2rem 0; border: none;">
-            <h2>Contact</h2>
+    <div class="section-bar" id="kontakt">
+        <h2>Contact</h2>
+    </div>
+
+    <div class="contact-grid">
+        <div class="contact-cell">
+            <p class="contact-label">Email</p>
+            <p class="contact-value"><a href="mailto:info@technicrail.pl">info@technicrail.pl</a></p>
         </div>
-        <div class="contact-box">
-            <dl class="contact-details">
-                <dt>Email</dt>
-                <dd><a href="mailto:info@technicrail.pl">info@technicrail.pl</a></dd>
-                <dt>Phone</dt>
-                <dd>+48 000 000 000</dd>
-                <dt>Address</dt>
-                <dd>Poland</dd>
-            </dl>
+        <div class="contact-cell">
+            <p class="contact-label">Phone</p>
+            <p class="contact-value">+48 000 000 000</p>
         </div>
-    </section>
+        <div class="contact-cell">
+            <p class="contact-label">Address</p>
+            <p class="contact-value">Poland</p>
+        </div>
+    </div>
 
     <footer>
-        <span>&copy; 2026 TechnicRail.pl</span>
+        <span>© 2026 TechnicRail.pl</span>
         <span>Parts · Service · Production · Solutions · CAD</span>
     </footer>
 
