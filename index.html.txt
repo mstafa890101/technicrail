@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnicRail | Industrial Solutions, Part Sales, Service & Repair</title>
+    <meta name="description" content="TechnicRail - Expert industrial solutions, component sales, service and repair for railway and heavy industry.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #d97706; /* Industrigul/orange */
+            --accent-hover: #b45309;
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        .btn {
+            background: var(--accent);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--accent-hover);
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: #fff;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .service-icon {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .service-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        /* About Section */
+        .about {
+            background: var(--bg-light);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-text h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        /* Contact Section */
+        .contact {
+            background: #fff;
+        }
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--accent);
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <i data-lucide="train"></i> Technic<span>Rail</span>.pl
+        </a>
+        <nav>
+            <a href="#services">Tjänster</a>
+            <a href="#about">Om oss</a>
+            <a href="#contact" class="btn">Kontakta oss</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Precision & Innovation for Railway & Industry</h1>
+        <p>Specialized technical solutions, reliable component sales, professional service and advanced repair.</p>
+        <a href="#contact" class="btn">Begär offert / Kontakt</a>
+    </section>
+
+    <div class="container" id="services">
+        <div class="section-title">
+            <h2>Våra Kärnområden</h2>
+            <p>Vi levererar industriell expertis med fokus på kvalitet och säkerhet.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i data-lucide="cpu" size="36"></i></div>
+                <h3>Technic Solutions</h3>
+                <p>Skräddarsydda tekniska lösningar och konstruktion anpassade efter krävande industri- och järnvägsstandarder.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i data-lucide="package-check" size="36"></i></div>
+                <h3>Part Sales</h3>
+                <p>Sourcing och försäljning av reservdelar och komponenter. Vi hjälper dig att hitta rätt delar snabbt och effektivt.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i data-lucide="wrench" size="36"></i></div>
+                <h3>Service & Repair</h3>
+                <p>Professionell felsökning, underhåll och reparation av maskiner, utrustning och system med full spårbarhet.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Om TechnicRail</h2>
+                    <p>TechnicRail är din pålitliga partner inom industri- och järnvägsteknologi. Vi kombinerar djup teknisk kompetens med ett starkt engagemang för våra kunders operativa säkerhet och effektivitet.</p>
+                    <p>Genom flexibla lösningar, snabb hantering av reservdelar och kvalificerad service säkerställer vi att din verksamhet rullar på utan avbrott.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Industrial workshop">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container contact" id="contact">
+        <div class="section-title">
+            <h2>Kontakta oss</h2>
+            <p>Har du frågor om reservdelar, tekniska lösningar eller service? Hör av dig direkt till oss.</p>
+        </div>
+        <div class="contact-form">
+            <form action="mailto:info@technicrail.pl" method="POST" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Namn / Företag</label>
+                    <input type="text" id="name" name="name" required placeholder="Ditt namn eller företagsnamn">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-postadress</label>
+                    <input type="email" id="email" name="email" required placeholder="namn@foretag.se">
+                </div>
+                <div class="form-group">
+                    <label for="message">Meddelande / Förfrågan</label>
+                    <textarea id="message" name="message" required placeholder="Beskriv vad du behöver hjälp med..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Skicka meddelande</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 TechnicRail.pl. Alla rättigheter förbehållna.</p>
+        <p>Industrial Solutions | Part Sales | Service & Repair</p>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
