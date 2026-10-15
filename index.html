@@ -31,7 +31,7 @@
             }
         }
         .brand-train-logo {
-            height: 34px;
+            height: 38px;
             width: auto;
             object-fit: contain;
             display: inline-block;
@@ -45,22 +45,7 @@
     <header class="border-b border-foreground sticky top-0 z-50 bg-background">
         <div class="mx-auto flex max-w-7xl items-stretch justify-between px-6">
             <a href="#top" class="font-display py-4 text-xl font-extrabold uppercase tracking-tight flex items-center gap-3">
-                <!-- Tåglogotyp -->
-                <svg class="brand-train-logo" viewBox="0 0 270 135" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Fart- och spårlinjer under tåget -->
-                    <path d="M12 95 L95 55" stroke="#111111" stroke-width="12" stroke-linecap="round"/>
-                    <path d="M42 120 L155 70" stroke="#111111" stroke-width="14" stroke-linecap="round"/>
-                    <path d="M90 130 L220 80" stroke="#111111" stroke-width="13" stroke-linecap="round"/>
-                    <!-- Tågkroppens mörka bas -->
-                    <path d="M80 65 C72 32 105 10 148 10 C188 10 238 25 250 42 L215 70 C165 78 100 78 80 65 Z" fill="#111111"/>
-                    <!-- Vit nos och cockpit -->
-                    <path d="M98 55 C90 32 118 18 152 16 L235 48 C185 58 135 62 98 55 Z" fill="#ffffff"/>
-                    <!-- Svart förarfönster -->
-                    <path d="M118 28 L145 28 L135 46 L112 40 Z" fill="#111111"/>
-                    <path d="M122 32 L138 42" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                    <!-- Karakteristisk orange linje / frontbåge -->
-                    <path d="M140 18 C185 22 225 35 246 45 L242 49 C195 40 145 35 110 58 L114 53 C145 32 185 24 235 44" stroke="#f57200" stroke-width="6" stroke-linecap="round" fill="none"/>
-                </svg>
+                <img src="logo.png" alt="TechnicRail Logo" class="brand-train-logo">
                 TECHNICRAIL<span class="text-primary">.PL</span>
             </a>
             <nav class="font-mono-tech hidden items-stretch text-xs uppercase md:flex">
@@ -83,7 +68,7 @@
                     <a href="#oferta" class="border border-l-0 border-foreground px-6 py-3 text-sm font-semibold uppercase hover:bg-secondary">See the offer</a>
                 </div>
             </div>
-            <!-- Bildsektion utan ram och utan bildtext -->
+            <!-- Bildsektion utan ram och utan undertext -->
             <div class="relative flex items-center justify-center pb-16 lg:col-span-5 lg:py-24 lg:pl-12">
                 <img src="https://technicrail-parts-and-plans.lovable.app/assets/hero-rail-CrA_Cda5.jpg" alt="Rail vehicle in the TechnicRail workshop" class="aspect-[4/5] w-full object-cover grayscale-[35%]" width="1920" height="1088">
             </div>
@@ -160,7 +145,7 @@ Poland</dd>
                 </dl>
             </div>
             
-            <!-- Integrerat Web3Forms Formulär -->
+            <!-- Web3Forms Form med din personliga Access Key -->
             <form action="https://api.web3forms.com/submit" method="POST" class="border border-foreground bg-card p-8 lg:col-span-6 lg:col-start-7">
                 <input type="hidden" name="access_key" value="b340fe0b-1ecb-4e17-a3c2-0fec540e6302">
                 <input type="hidden" name="subject" value="New Inquiry from TechnicRail.pl">
