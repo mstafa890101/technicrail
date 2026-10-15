@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TECHNICRAIL.PL | Parts, Repairs, Engineering</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TechnicRail — Railway Spare Parts, Service &amp; Engineering</title>
-    <meta name="description" content="TechnicRail delivers railway spare parts, service &amp; repair, production, engineering solutions and CAD design for the rail industry.">
-    <link rel="icon" href="https://technicrail-parts-and-plans.lovable.app/favicon.ico" type="image/x-icon">
+    <meta name="description" content="TechnicRail delivers railway spare parts, service & repair, production, engineering solutions and CAD design for the rail industry.">
     
-    <!-- Typsnitt: Archivo & IBM Plex Mono -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Favicon med det nya tåget -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M10 50 L54 50' stroke='%23111' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M16 44 L48 44' stroke='%23111' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M14 42 C16 26 28 14 46 14 L52 14 C52 24 46 36 34 42 Z' fill='%23111'/%3E%3Cpath d='M30 20 C42 20 48 26 48 30 L22 30 C24 24 26 20 30 20 Z' fill='%23f57200'/%3E%3C/svg%3E">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-paper: #f5f4ef;
@@ -64,12 +64,15 @@
         }
 
         .header-brand {
-            padding: 1.25rem 2.5rem;
+            padding: 1rem 2.5rem;
             display: flex;
             align-items: center;
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
             font-family: 'Syne', sans-serif;
             font-size: 1.4rem;
             font-weight: 800;
@@ -83,6 +86,12 @@
             color: var(--accent-orange);
         }
 
+        .logo-train-icon {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+        }
+
         nav {
             display: flex;
             align-items: stretch;
@@ -91,7 +100,7 @@
         .nav-item {
             display: flex;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 2.5rem;
             border-left: 1px solid var(--border-line);
             font-family: 'Space Mono', monospace;
             font-size: 0.75rem;
@@ -99,7 +108,8 @@
             text-transform: uppercase;
             text-decoration: none;
             color: var(--ink);
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
+            transition: background 0.15s ease;
         }
 
         .nav-item:hover {
@@ -109,6 +119,10 @@
         .nav-item.contact-tab {
             background: var(--accent-orange);
             color: #ffffff;
+        }
+
+        .nav-item.contact-tab:hover {
+            background: #e06500;
         }
 
         /* HERO */
@@ -176,6 +190,7 @@
             text-transform: uppercase;
             text-decoration: none;
             border: 1px solid var(--border-line);
+            transition: all 0.2s ease;
         }
 
         .btn-solid {
@@ -183,9 +198,18 @@
             color: #ffffff;
         }
 
+        .btn-solid:hover {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
+
         .btn-ghost {
             background: transparent;
             color: var(--ink);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(0, 0, 0, 0.05);
         }
 
         .hero-right {
@@ -247,24 +271,18 @@
 
         .offer-row {
             display: grid;
-            grid-template-columns: 90px 280px 1fr 60px;
+            grid-template-columns: 320px 1fr 60px;
             align-items: center;
-            gap: 2rem;
+            gap: 2.5rem;
             padding: 2.25rem 3rem;
             border-bottom: 1px solid var(--border-line);
             text-decoration: none;
             color: inherit;
+            transition: background 0.15s ease;
         }
 
         .offer-row:hover {
             background: rgba(0, 0, 0, 0.02);
-        }
-
-        .offer-code {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--accent-orange);
         }
 
         .offer-title {
@@ -277,7 +295,7 @@
 
         .offer-desc {
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
             color: var(--ink-muted);
         }
 
@@ -285,6 +303,12 @@
             font-family: 'Space Mono', monospace;
             font-size: 1.4rem;
             text-align: right;
+            transition: transform 0.2s ease;
+        }
+
+        .offer-row:hover .offer-arrow {
+            transform: translateX(4px);
+            color: var(--accent-orange);
         }
 
         /* MANIFESTO */
@@ -348,6 +372,11 @@
         .contact-value a {
             color: var(--ink);
             text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        .contact-value a:hover {
+            color: var(--accent-orange);
         }
 
         /* FOOTER */
@@ -386,30 +415,44 @@
                 border-right: none;
                 border-bottom: 1px solid var(--border-line);
             }
+            nav {
+                display: none;
+            }
         }
     </style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
-    
-    <!-- Lovables kompletta original-CSS -->
-    <link rel="stylesheet" href="https://technicrail-parts-and-plans.lovable.app/assets/styles-CLJPIyd-.css">
-    
-    <!-- Förladdning av originalbilden -->
-    <link rel="preload" as="image" href="https://technicrail-parts-and-plans.lovable.app/assets/hero-rail-CrA_Cda5.jpg">
 </head>
 <body>
 
 <div class="site-wrapper">
+    <!-- HEADER -->
     <header id="top">
         <div class="header-brand">
-            <a href="#top" class="logo">TECHNICRAIL<span>.PL</span></a>
+            <a href="#top" class="logo">
+                <svg class="logo-train-icon" viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Räls / Spår -->
+                    <path d="M12 62 L88 62" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M22 66 L18 58" stroke="#111111" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M38 66 L34 58" stroke="#111111" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M54 66 L50 58" stroke="#111111" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M70 66 L66 58" stroke="#111111" stroke-width="4" stroke-linecap="round"/>
+                    <!-- Tågkropp -->
+                    <path d="M18 54 C20 34 36 16 64 16 L84 16 C88 28 80 44 62 54 Z" fill="#111111"/>
+                    <!-- Fönster och linjer -->
+                    <path d="M42 24 C56 24 68 30 70 38 L32 38 C34 30 38 24 42 24 Z" fill="#ffffff"/>
+                    <!-- Orange fartrand -->
+                    <path d="M30 44 L80 44 C76 49 68 51 60 51 L25 51 Z" fill="#f57200"/>
+                </svg>
+                TECHNICRAIL<span>.PL</span>
+            </a>
         </div>
         <nav>
-            <a href="#oferta" class="nav-item">01 Offer</a>
-            <a href="#firma" class="nav-item">02 Company</a>
-            <a href="#kontakt" class="nav-item contact-tab">03 Contact</a>
+            <a href="#oferta" class="nav-item">Offer</a>
+            <a href="#firma" class="nav-item">Company</a>
+            <a href="#kontakt" class="nav-item contact-tab">Contact</a>
         </nav>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-left">
             <p class="category-tag">Railway technology / Poland</p>
@@ -418,16 +461,7 @@
             <div class="hero-actions">
                 <a href="#kontakt" class="btn btn-solid">Send an inquiry</a>
                 <a href="#oferta" class="btn btn-ghost">See the offer</a>
-    <div class="min-h-screen bg-background text-foreground">
-        <header class="border-b border-foreground">
-            <div class="mx-auto flex max-w-7xl items-stretch justify-between px-6">
-                <a href="#top" class="font-display py-5 text-xl font-extrabold uppercase tracking-tight">TechnicRail<span class="text-primary">.pl</span></a>
-                <nav class="font-mono-tech hidden items-stretch text-xs uppercase md:flex">
-                    <a href="#oferta" class="flex items-center border-l border-foreground px-6 hover:bg-ink hover:text-ink-foreground">01 Offer</a>
-                    <a href="#firma" class="flex items-center border-l border-foreground px-6 hover:bg-ink hover:text-ink-foreground">02 Company</a>
-                    <a href="#kontakt" class="flex items-center border-l border-r border-foreground bg-primary px-6 text-primary-foreground hover:bg-ink hover:text-ink-foreground">03 Contact</a>
-                </nav>
-</div>
+            </div>
         </div>
         <div class="hero-right">
             <div class="blueprint-card">
@@ -435,32 +469,12 @@
                 <div class="blueprint-caption">
                     <span>Fig. 1 — Workshop</span>
                     <span>Scale 1:1</span>
-        </header>
-
-        <section id="top" class="bg-grid-paper border-b border-foreground">
-            <div class="mx-auto grid max-w-7xl px-6 lg:grid-cols-12">
-                <div class="py-16 lg:col-span-7 lg:border-r lg:border-foreground lg:py-24 lg:pr-12">
-                    <p class="font-mono-tech text-xs uppercase text-muted-foreground">Railway technology / Poland</p>
-                    <h1 class="mt-6 text-5xl font-extrabold uppercase leading-[0.95] tracking-tight sm:text-7xl">Parts.<br>Repairs.<br><span class="text-outline">Engineering.</span></h1>
-                    <p class="mt-8 max-w-md text-lg leading-relaxed">We supply, repair, manufacture and design for rail vehicles. One workshop, one team, one point of contact.</p>
-                    <div class="mt-10 flex flex-wrap gap-0">
-                        <a href="#kontakt" class="border border-foreground bg-ink px-6 py-3 text-sm font-semibold uppercase text-ink-foreground hover:bg-primary hover:border-primary">Send an inquiry</a>
-                        <a href="#oferta" class="border border-l-0 border-foreground px-6 py-3 text-sm font-semibold uppercase hover:bg-secondary">See the offer</a>
-                    </div>
-</div>
-                <figure class="relative pb-16 lg:col-span-5 lg:py-24 lg:pl-12">
-                    <div class="border border-foreground p-2">
-                        <img src="https://technicrail-parts-and-plans.lovable.app/assets/hero-rail-CrA_Cda5.jpg" alt="Rail vehicle in the TechnicRail workshop" class="aspect-[4/5] w-full object-cover grayscale-[35%]" width="1920" height="1088">
-                    </div>
-                    <figcaption class="font-mono-tech mt-3 flex justify-between text-[11px] uppercase text-muted-foreground">
-                        <span>Fig. 1 — Workshop</span>
-                        <span>Scale 1:1</span>
-                    </figcaption>
-                </figure>
-</div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- OFFER -->
     <div class="section-bar" id="oferta">
         <h2>Offer</h2>
         <span class="section-count">05 items</span>
@@ -468,42 +482,37 @@
 
     <div class="offer-table">
         <a href="#kontakt" class="offer-row">
-            <span class="offer-code">TR-01</span>
             <span class="offer-title">Spare parts</span>
             <p class="offer-desc">Components for rolling stock: bogie parts, wheelsets, brake equipment, couplers, interior fittings. Sourced, stocked and shipped.</p>
             <span class="offer-arrow">→</span>
         </a>
-        </section>
 
         <a href="#kontakt" class="offer-row">
-            <span class="offer-code">TR-02</span>
             <span class="offer-title">Service & repair</span>
             <p class="offer-desc">Maintenance, overhaul and repair of vehicles and assemblies — in our workshop or at your depot.</p>
             <span class="offer-arrow">→</span>
         </a>
 
         <a href="#kontakt" class="offer-row">
-            <span class="offer-code">TR-03</span>
             <span class="offer-title">Production</span>
             <p class="offer-desc">Machining, welding and assembly of steel structures and mechanical parts, made to drawing.</p>
             <span class="offer-arrow">→</span>
         </a>
 
         <a href="#kontakt" class="offer-row">
-            <span class="offer-code">TR-04</span>
             <span class="offer-title">Solutions</span>
             <p class="offer-desc">Modernization, retrofit and technical support for operators and manufacturers.</p>
             <span class="offer-arrow">→</span>
         </a>
 
         <a href="#kontakt" class="offer-row">
-            <span class="offer-code">TR-05</span>
             <span class="offer-title">CAD</span>
             <p class="offer-desc">3D models, 2D documentation and reverse engineering of worn or discontinued parts.</p>
             <span class="offer-arrow">→</span>
         </a>
     </div>
 
+    <!-- MANIFESTO / COMPANY -->
     <section class="manifesto" id="firma">
         <h2>Built around the depot, not the brochure.</h2>
         <div class="manifesto-body">
@@ -512,115 +521,10 @@
         </div>
     </section>
 
+    <!-- CONTACT -->
     <div class="section-bar" id="kontakt">
         <h2>Contact</h2>
     </div>
-        <section id="oferta" class="border-b border-foreground">
-            <div class="mx-auto max-w-7xl px-6 py-20">
-                <div class="flex items-end justify-between gap-6 border-b border-foreground pb-6">
-                    <h2 class="text-3xl font-extrabold uppercase sm:text-5xl">Offer</h2>
-                    <span class="font-mono-tech text-xs uppercase text-muted-foreground">05 items</span>
-                </div>
-                <ul>
-                    <li class="group grid gap-4 border-b border-border py-8 transition-colors hover:bg-card sm:grid-cols-12 sm:items-baseline">
-                        <span class="font-mono-tech text-sm text-primary sm:col-span-2">TR-01</span>
-                        <h3 class="text-2xl font-bold uppercase sm:col-span-4 sm:text-3xl">Spare parts</h3>
-                        <p class="leading-relaxed text-muted-foreground sm:col-span-5">Components for rolling stock: bogie parts, wheelsets, brake equipment, couplers, interior fittings. Sourced, stocked and shipped.</p>
-                        <a href="#kontakt" class="font-mono-tech text-sm sm:col-span-1 sm:text-right group-hover:text-primary" aria-label="Ask about Spare parts">→</a>
-                    </li>
-                    <li class="group grid gap-4 border-b border-border py-8 transition-colors hover:bg-card sm:grid-cols-12 sm:items-baseline">
-                        <span class="font-mono-tech text-sm text-primary sm:col-span-2">TR-02</span>
-                        <h3 class="text-2xl font-bold uppercase sm:col-span-4 sm:text-3xl">Service &amp; repair</h3>
-                        <p class="leading-relaxed text-muted-foreground sm:col-span-5">Maintenance, overhaul and repair of vehicles and assemblies — in our workshop or at your depot.</p>
-                        <a href="#kontakt" class="font-mono-tech text-sm sm:col-span-1 sm:text-right group-hover:text-primary" aria-label="Ask about Service &amp; repair">→</a>
-                    </li>
-                    <li class="group grid gap-4 border-b border-border py-8 transition-colors hover:bg-card sm:grid-cols-12 sm:items-baseline">
-                        <span class="font-mono-tech text-sm text-primary sm:col-span-2">TR-03</span>
-                        <h3 class="text-2xl font-bold uppercase sm:col-span-4 sm:text-3xl">Production</h3>
-                        <p class="leading-relaxed text-muted-foreground sm:col-span-5">Machining, welding and assembly of steel structures and mechanical parts, made to drawing.</p>
-                        <a href="#kontakt" class="font-mono-tech text-sm sm:col-span-1 sm:text-right group-hover:text-primary" aria-label="Ask about Production">→</a>
-                    </li>
-                    <li class="group grid gap-4 border-b border-border py-8 transition-colors hover:bg-card sm:grid-cols-12 sm:items-baseline">
-                        <span class="font-mono-tech text-sm text-primary sm:col-span-2">TR-04</span>
-                        <h3 class="text-2xl font-bold uppercase sm:col-span-4 sm:text-3xl">Solutions</h3>
-                        <p class="leading-relaxed text-muted-foreground sm:col-span-5">Modernization, retrofit and technical support for operators and manufacturers.</p>
-                        <a href="#kontakt" class="font-mono-tech text-sm sm:col-span-1 sm:text-right group-hover:text-primary" aria-label="Ask about Solutions">→</a>
-                    </li>
-                    <li class="group grid gap-4 border-b border-border py-8 transition-colors hover:bg-card sm:grid-cols-12 sm:items-baseline">
-                        <span class="font-mono-tech text-sm text-primary sm:col-span-2">TR-05</span>
-                        <h3 class="text-2xl font-bold uppercase sm:col-span-4 sm:text-3xl">CAD</h3>
-                        <p class="leading-relaxed text-muted-foreground sm:col-span-5">3D models, 2D documentation and reverse engineering of worn or discontinued parts.</p>
-                        <a href="#kontakt" class="font-mono-tech text-sm sm:col-span-1 sm:text-right group-hover:text-primary" aria-label="Ask about CAD">→</a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="firma" class="border-b border-foreground bg-ink text-ink-foreground">
-            <div class="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-12">
-                <h2 class="text-3xl font-extrabold uppercase sm:text-5xl lg:col-span-5">Built around the depot, not the brochure.</h2>
-                <div class="space-y-5 text-lg leading-relaxed opacity-85 lg:col-span-6 lg:col-start-7">
-                    <p>TechnicRail works with carriers, maintenance companies and manufacturers. When a vehicle is standing still, we find the part, make it if it no longer exists, and fit it.</p>
-                    <p>Our CAD department turns a worn sample into a full drawing, and our production floor turns the drawing into a finished component.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="kontakt" class="bg-grid-paper">
-            <div class="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-12">
-                <div class="lg:col-span-5">
-                    <h2 class="text-3xl font-extrabold uppercase sm:text-5xl">Contact</h2>
-                    <dl class="font-mono-tech mt-10 space-y-4 text-sm">
-                        <div class="flex gap-6 border-b border-border pb-4">
-                            <dt class="w-20 uppercase text-muted-foreground">Email</dt>
-                            <dd><a href="mailto:info@technicrail.pl" class="hover:text-primary">info@technicrail.pl</a></dd>
-                        </div>
-                        <div class="flex gap-6 border-b border-border pb-4">
-                            <dt class="w-20 uppercase text-muted-foreground">Phone</dt>
-                            <dd>+48 000 000 000</dd>
-                        </div>
-                        <div class="flex gap-6 border-b border-border pb-4">
-                            <dt class="w-20 uppercase text-muted-foreground">Address</dt>
-                            <dd>Poland</dd>
-                        </div>
-                    </dl>
-                </div>
-                <form class="border border-foreground bg-card p-8 lg:col-span-6 lg:col-start-7">
-                    <p class="font-mono-tech mb-6 text-xs uppercase text-muted-foreground">Inquiry form</p>
-                    <div class="grid gap-5 sm:grid-cols-2">
-                        <label class="block">
-                            <span class="font-mono-tech text-xs uppercase">Name</span>
-                            <input type="text" required="" class="mt-2 w-full border-b border-foreground bg-transparent py-2 outline-none focus:border-primary">
-                        </label>
-                        <label class="block">
-                            <span class="font-mono-tech text-xs uppercase">Company</span>
-                            <input type="text" class="mt-2 w-full border-b border-foreground bg-transparent py-2 outline-none focus:border-primary">
-                        </label>
-                    </div>
-                    <div class="mt-5">
-                        <label class="block">
-                            <span class="font-mono-tech text-xs uppercase">Email</span>
-                            <input type="email" required="" class="mt-2 w-full border-b border-foreground bg-transparent py-2 outline-none focus:border-primary">
-                        </label>
-                    </div>
-                    <label class="mt-5 block">
-                        <span class="font-mono-tech text-xs uppercase">Subject</span>
-                        <select class="mt-2 w-full border-b border-foreground bg-transparent py-2 outline-none focus:border-primary">
-                            <option>Spare parts</option>
-                            <option>Service &amp; repair</option>
-                            <option>Production</option>
-                            <option>Solutions</option>
-                            <option>CAD</option>
-                        </select>
-                    </label>
-                    <label class="mt-5 block">
-                        <span class="font-mono-tech text-xs uppercase">Message</span>
-                        <textarea required="" rows="4" class="mt-2 w-full resize-none border-b border-foreground bg-transparent py-2 outline-none focus:border-primary" placeholder="Part number, vehicle type, quantity…"></textarea>
-                    </label>
-                    <button type="submit" class="mt-8 w-full bg-primary py-4 text-sm font-semibold uppercase text-primary-foreground hover:bg-ink hover:text-ink-foreground">Send inquiry</button>
-                </form>
-            </div>
-        </section>
 
     <div class="contact-grid">
         <div class="contact-cell">
@@ -635,14 +539,9 @@
             <p class="contact-label">Address</p>
             <p class="contact-value">Poland</p>
         </div>
-        <footer class="border-t border-foreground">
-            <div class="font-mono-tech mx-auto flex max-w-7xl flex-col justify-between gap-2 px-6 py-6 text-xs uppercase text-muted-foreground sm:flex-row">
-                <span>© 2026 TechnicRail.pl</span>
-                <span>Parts · Service · Production · Solutions · CAD</span>
-            </div>
-        </footer>
-</div>
+    </div>
 
+    <!-- FOOTER -->
     <footer>
         <span>© 2026 TechnicRail.pl</span>
         <span>Parts · Service · Production · Solutions · CAD</span>
