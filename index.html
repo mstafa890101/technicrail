@@ -1,659 +1,333 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechnicRail.pl | Rail Vehicle Engineering, Repairs & Spare Parts</title>
-  <meta name="description" content="TechnicRail Poland – High-precision rail engineering, rolling stock spare parts, component overhaul, and technical depot support across Europe.">
-  
-  <!-- Favicon using the new High-Speed Train SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23111827' d='M8 78l26-10 4 3-26 10zm16-4l24-9 3 3-24 9zm16-4l24-9 3 3-24 9zm18-5l20-8 3 3-20 8z'/%3E%3Cpath fill='%23e8590c' d='M50 25c14 0 35 7 44 11-12 1-36 7-49 14-8 4-13 10-15 14-1-6 2-25 15-34 2-3 3-5 5-5z'/%3E%3Cpath fill='%23111827' d='M46 23C32 24 28 39 30 54c1 6 3 9 7 9 10 0 28-8 46-17 11-5 13-6 13-6s-20-8-36-13c-3-1-7-1-10-1zm1 5c2 0 5 1 8 2 11 3 24 8 30 11-13 4-29 11-37 14-1 0-3-1-3-4 0-11 5-21 12-23z'/%3E%3C/svg%3E">
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts: Space Grotesk & Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              orange: '#e8590c',
-              orangeHover: '#cf4e0a',
-              dark: '#111317',
-              surface: '#f9f9f7',
-              grid: '#e5e7eb',
-              metal: '#20242c',
-              dim: '#6b7280'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Space Grotesk', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnicRail | Industrial Solutions, Part Sales, Service & Repair</title>
+    <meta name="description" content="TechnicRail - Expert industrial solutions, component sales, service and repair for railway and heavy industry.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #d97706; /* Industrigul/orange */
+            --accent-hover: #b45309;
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
         }
-      }
-    }
-  </script>
-
-  <style>
-    /* Technical blueprint grid overlay */
-    .blueprint-grid {
-      background-color: #f8f8f6;
-      background-image: 
-        linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-
-    /* Outlined stroked typography for the hero ENGINEERING text */
-    .text-stroke-tech {
-      color: transparent;
-      -webkit-text-stroke: 1.5px #111317;
-      text-stroke: 1.5px #111317;
-    }
-
-    @media (min-width: 768px) {
-      .text-stroke-tech {
-        -webkit-text-stroke: 2px #111317;
-      }
-    }
-
-    /* Precision technical corner markers */
-    .crosshair-corner {
-      position: relative;
-    }
-    .crosshair-corner::before, .crosshair-corner::after {
-      content: '';
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      pointer-events: none;
-    }
-    .crosshair-corner::before {
-      top: -1px;
-      left: -1px;
-      border-top: 2px solid #111317;
-      border-left: 2px solid #111317;
-    }
-    .crosshair-corner::after {
-      bottom: -1px;
-      right: -1px;
-      border-bottom: 2px solid #111317;
-      border-right: 2px solid #111317;
-    }
-  </style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        .btn {
+            background: var(--accent);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--accent-hover);
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: #fff;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .service-icon {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .service-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        /* About Section */
+        .about {
+            background: var(--bg-light);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-text h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        /* Contact Section */
+        .contact {
+            background: #fff;
+        }
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--accent);
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
 </head>
+<body>
 
-<body class="blueprint-grid text-brand-dark min-h-screen flex flex-col font-sans selection:bg-brand-orange selection:text-white antialiased">
+    <header>
+        <a href="#" class="logo">
+            <i data-lucide="train"></i> Technic<span>Rail</span>.pl
+        </a>
+        <nav>
+            <a href="#services">Tjänster</a>
+            <a href="#about">Om oss</a>
+            <a href="#contact" class="btn">Kontakta oss</a>
+        </nav>
+    </header>
 
-  <!-- ================= TOP NAVIGATION BAR ================= -->
-  <header class="border-b border-brand-dark bg-brand-surface/95 backdrop-blur-sm sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto flex items-stretch justify-between px-4 sm:px-6">
-      
-      <!-- Brand & New Train Logo -->
-      <a href="#" class="flex items-center gap-3 py-3 sm:py-4 group">
-        <!-- SVG Vector representation of the train from user photo -->
-        <div class="w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
-          <svg viewBox="0 0 120 100" class="w-full h-full drop-shadow-sm" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Railway track lines receding -->
-            <path d="M12 85L48 70M24 92L60 77M44 98L78 84" stroke="#111317" stroke-width="3" stroke-linecap="round"/>
-            <path d="M10 88L70 65M32 99L86 76" stroke="#111317" stroke-width="4.5" stroke-linecap="round"/>
-            
-            <!-- Train Body Underframe Shadow -->
-            <path d="M44 68C48 68 53 66 58 64L68 60L72 56L42 63C38 64 36 67 44 68Z" fill="#111317"/>
-            
-            <!-- High-speed Train Body (Main Shell) -->
-            <path d="M54 24C41 26 36 40 37 54C38 59 42 63 47 62C60 60 84 50 110 39C104 36 78 28 54 24Z" fill="#ffffff" stroke="#111317" stroke-width="3" stroke-linejoin="round"/>
-            
-            <!-- Aerodynamic Orange Swoosh & Dynamic Stripes -->
-            <path d="M57 26.5C72 29 96 36 108 39.5C92 43 65 52 50 56.5C45.5 57.5 43 56 42 53C40 45 44 32 57 26.5Z" fill="#e8590c"/>
-            <path d="M60 36C75 40 98 47 106 50C92 53 72 58 60 60.5C53 62 50 60 52 57C54 53 56 46 60 36Z" fill="#e8590c"/>
-            
-            <!-- Dark Windshield / Cab Cockpit Window -->
-            <path d="M48 29C44 31 40 38 41 47C42 51 45 52 48 51C52 49 55 45 54 39C53 33 51 29 48 29Z" fill="#111317"/>
-            <path d="M43.5 35L48 48M47 31L52 45" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-            
-            <!-- Nose Highlight and Headlight -->
-            <path d="M41 54C42 56 45 56.5 48 55.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="43" cy="53" r="1.5" fill="#facc15"/>
-          </svg>
+    <section class="hero">
+        <h1>Precision & Innovation for Railway & Industry</h1>
+        <p>Specialized technical solutions, reliable component sales, professional service and advanced repair.</p>
+        <a href="#contact" class="btn">Begär offert / Kontakt</a>
+    </section>
+
+    <div class="container" id="services">
+        <div class="section-title">
+            <h2>Våra Kärnområden</h2>
+            <p>Vi levererar industriell expertis med fokus på kvalitet och säkerhet.</p>
         </div>
-        
-        <div class="flex flex-col">
-          <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-brand-dark flex items-center">
-            TECHNICRAIL<span class="text-brand-orange font-mono">.PL</span>
-          </span>
-          <span class="font-mono text-[9px] tracking-widest text-brand-dim uppercase -mt-1 hidden sm:block">
-            Industrial Rail Systems
-          </span>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i data-lucide="cpu" size="36"></i></div>
+                <h3>Technic Solutions</h3>
+                <p>Skräddarsydda tekniska lösningar och konstruktion anpassade efter krävande industri- och järnvägsstandarder.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i data-lucide="package-check" size="36"></i></div>
+                <h3>Part Sales</h3>
+                <p>Sourcing och försäljning av reservdelar och komponenter. Vi hjälper dig att hitta rätt delar snabbt och effektivt.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i data-lucide="wrench" size="36"></i></div>
+                <h3>Service & Repair</h3>
+                <p>Professionell felsökning, underhåll och reparation av maskiner, utrustning och system med full spårbarhet.</p>
+            </div>
         </div>
-      </a>
-
-      <!-- Navigation without 01, 02, 03 numbers -->
-      <nav class="flex items-stretch border-l border-brand-dark">
-        <a href="#offer" class="hidden sm:flex items-center px-6 py-2 border-r border-brand-dark font-display font-bold text-xs md:text-sm tracking-wider uppercase text-brand-dark hover:bg-black/5 transition-colors">
-          OFFER
-        </a>
-        <a href="#company" class="hidden sm:flex items-center px-6 py-2 border-r border-brand-dark font-display font-bold text-xs md:text-sm tracking-wider uppercase text-brand-dark hover:bg-black/5 transition-colors">
-          COMPANY
-        </a>
-        <a href="#contact" class="flex items-center px-6 sm:px-8 py-2 bg-brand-orange text-white font-display font-bold text-xs md:text-sm tracking-wider uppercase hover:bg-brand-orangeHover transition-colors shadow-sm">
-          CONTACT
-        </a>
-      </nav>
     </div>
-  </header>
 
-  <!-- ================= HERO SECTION ================= -->
-  <main class="flex-grow">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-16 border-b border-brand-dark/40">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        
-        <!-- Left Column: Technical Pitch -->
-        <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
-          
-          <div class="inline-flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
-            <span class="font-mono text-xs font-semibold tracking-wider text-brand-dim uppercase">
-              RAILWAY TECHNOLOGY / POLAND
-            </span>
-          </div>
-
-          <h1 class="font-display font-extrabold text-4xl sm:text-6xl xl:text-7xl leading-[0.95] tracking-tight uppercase">
-            PARTS.<br>
-            REPAIRS.<br>
-            <span class="text-stroke-tech">ENGINEERING.</span>
-          </h1>
-
-          <p class="text-base sm:text-lg text-brand-dim max-w-xl font-normal leading-relaxed">
-            We supply, repair, manufacture and design for rail vehicles. One workshop, one team, one point of contact.
-          </p>
-
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <a href="#contact-modal" onclick="openContactModal()" class="px-6 py-3.5 bg-brand-dark text-white font-display font-bold text-xs sm:text-sm tracking-wider uppercase border border-brand-dark hover:bg-brand-orange hover:border-brand-orange transition-all duration-200 shadow-md">
-              SEND AN INQUIRY
-            </a>
-            <a href="#offer" class="px-6 py-3.5 bg-transparent text-brand-dark font-display font-bold text-xs sm:text-sm tracking-wider uppercase border-2 border-brand-dark hover:bg-black/5 transition-colors">
-              SEE THE OFFER
-            </a>
-          </div>
-
-          <!-- Micro specs / badges -->
-          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-brand-dark/20 max-w-lg font-mono text-xs">
-            <div>
-              <div class="text-brand-dim uppercase text-[10px]">RESPONSE TIME</div>
-              <div class="font-bold text-brand-dark">&lt; 24 HOURS</div>
-            </div>
-            <div>
-              <div class="text-brand-dim uppercase text-[10px]">CERTIFICATION</div>
-              <div class="font-bold text-brand-dark">TSI / EN COMPLIANT</div>
-            </div>
-            <div>
-              <div class="text-brand-dim uppercase text-[10px]">DISPATCH</div>
-              <div class="font-bold text-brand-dark">EU-WIDE LOGISTICS</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column: Technical Blueprint Workshop Frame -->
-        <div class="lg:col-span-5">
-          <div class="relative p-2 border-2 border-brand-dark bg-white crosshair-corner shadow-lg">
-            
-            <div class="overflow-hidden border border-brand-dark/20 relative aspect-[4/5] bg-brand-metal">
-              <!-- Modern Train Maintenance Depot Imagery -->
-              <img 
-                src="https://images.unsplash.com/photo-1541427468627-a89a96e5ca1d?auto=format&fit=crop&w=1200&q=80" 
-                alt="Modern passenger rolling stock depot workshop" 
-                class="w-full h-full object-cover object-center grayscale contrast-125 brightness-95 hover:grayscale-0 transition-all duration-700"
-                onerror="this.src='https://placehold.co/800x1000/111827/ffffff?text=TECHNICRAIL+WORKSHOP'"
-              />
-              
-              <!-- Subtle technical reticle overlay -->
-              <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
-                <div class="w-16 h-16 border border-white/30 rounded-full flex items-center justify-center">
-                  <div class="w-2 h-2 bg-brand-orange rounded-full"></div>
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Om TechnicRail</h2>
+                    <p>TechnicRail är din pålitliga partner inom industri- och järnvägsteknologi. Vi kombinerar djup teknisk kompetens med ett starkt engagemang för våra kunders operativa säkerhet och effektivitet.</p>
+                    <p>Genom flexibla lösningar, snabb hantering av reservdelar och kvalificerad service säkerställer vi att din verksamhet rullar på utan avbrott.</p>
                 </div>
-              </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Industrial workshop">
+                </div>
             </div>
-
-            <!-- Technical Figure Metadata footer -->
-            <div class="mt-2 flex items-center justify-between font-mono text-[10px] text-brand-dim tracking-wider px-1">
-              <span>FIG. 1 WORKSHOP</span>
-              <span>SCALE 1:1</span>
-            </div>
-          </div>
         </div>
-
-      </div>
     </section>
 
-    <!-- ================= OFFER SECTION (CLEANED: NO TR-01/TR-02) ================= -->
-    <section id="offer" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 border-b border-brand-dark/40">
-      
-      <!-- Section Header -->
-      <div class="flex items-baseline justify-between border-b-2 border-brand-dark pb-4 mb-2">
-        <h2 class="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight">
-          OFFER
-        </h2>
-        <span class="font-mono text-xs sm:text-sm text-brand-dim tracking-widest uppercase">
-          05 ITEMS
-        </span>
-      </div>
-
-      <!-- Offer Items (Without numerical prefix tags) -->
-      <div class="divide-y divide-brand-dark/30">
-
-        <!-- Item 1: Spare Parts -->
-        <div class="py-6 sm:py-8 group hover:bg-white/60 transition-colors px-2 sm:px-4 cursor-pointer" onclick="toggleDetails('item-1')">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 items-baseline">
-            <div class="md:col-span-4">
-              <h3 class="font-display font-bold text-xl sm:text-2xl uppercase tracking-tight group-hover:text-brand-orange transition-colors flex items-center gap-2">
-                SPARE PARTS
-              </h3>
-            </div>
-            <div class="md:col-span-7">
-              <p class="text-sm sm:text-base text-brand-dim leading-relaxed">
-                Components for rolling stock: bogie parts, wheelsets, brake equipment, couplers, pneumatic valves, electrical connectors, and interior fittings. Sourced, tested, stocked, and shipped.
-              </p>
-            </div>
-            <div class="md:col-span-1 flex justify-end">
-              <span id="arrow-item-1" class="font-mono text-lg text-brand-dim group-hover:text-brand-orange transition-transform duration-200">
-                &rarr;
-              </span>
-            </div>
-          </div>
-          <!-- Expandable Detail -->
-          <div id="details-item-1" class="hidden mt-4 pt-4 border-t border-dashed border-brand-dark/20 text-xs font-mono text-brand-dim">
-            <span class="text-brand-orange font-bold uppercase">&bull; AVAILABLE:</span> Brake discs, brake pads, axle boxes, primary & secondary suspension springs, pantograph spare carbon strips, LED indicator units.
-          </div>
+    <section class="container contact" id="contact">
+        <div class="section-title">
+            <h2>Kontakta oss</h2>
+            <p>Har du frågor om reservdelar, tekniska lösningar eller service? Hör av dig direkt till oss.</p>
         </div>
-
-        <!-- Item 2: Service & Repair -->
-        <div class="py-6 sm:py-8 group hover:bg-white/60 transition-colors px-2 sm:px-4 cursor-pointer" onclick="toggleDetails('item-2')">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 items-baseline">
-            <div class="md:col-span-4">
-              <h3 class="font-display font-bold text-xl sm:text-2xl uppercase tracking-tight group-hover:text-brand-orange transition-colors">
-                SERVICE & REPAIR
-              </h3>
-            </div>
-            <div class="md:col-span-7">
-              <p class="text-sm sm:text-base text-brand-dim leading-relaxed">
-                Maintenance, overhaul, and repair of vehicles and assemblies — in our certified workshop or deployed directly on-site at your depot with mobile maintenance units.
-              </p>
-            </div>
-            <div class="md:col-span-1 flex justify-end">
-              <span id="arrow-item-2" class="font-mono text-lg text-brand-dim group-hover:text-brand-orange transition-transform duration-200">
-                &rarr;
-              </span>
-            </div>
-          </div>
-          <div id="details-item-2" class="hidden mt-4 pt-4 border-t border-dashed border-brand-dark/20 text-xs font-mono text-brand-dim">
-            <span class="text-brand-orange font-bold uppercase">&bull; CAPABILITIES:</span> Bogie rebuilds, hydraulic damper testing & reconditioning, brake system servicing, traction motor inspection, wheel profiling assistance.
-          </div>
+        <div class="contact-form">
+            <form action="mailto:info@technicrail.pl" method="POST" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Namn / Företag</label>
+                    <input type="text" id="name" name="name" required placeholder="Ditt namn eller företagsnamn">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-postadress</label>
+                    <input type="email" id="email" name="email" required placeholder="namn@foretag.se">
+                </div>
+                <div class="form-group">
+                    <label for="message">Meddelande / Förfrågan</label>
+                    <textarea id="message" name="message" required placeholder="Beskriv vad du behöver hjälp med..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Skicka meddelande</button>
+            </form>
         </div>
-
-        <!-- Item 3: Engineering & Design -->
-        <div class="py-6 sm:py-8 group hover:bg-white/60 transition-colors px-2 sm:px-4 cursor-pointer" onclick="toggleDetails('item-3')">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 items-baseline">
-            <div class="md:col-span-4">
-              <h3 class="font-display font-bold text-xl sm:text-2xl uppercase tracking-tight group-hover:text-brand-orange transition-colors">
-                ENGINEERING & DESIGN
-              </h3>
-            </div>
-            <div class="md:col-span-7">
-              <p class="text-sm sm:text-base text-brand-dim leading-relaxed">
-                Custom parts manufacturing, reverse engineering of worn parts, 3D laser scanning, stress calculation (FEM), technical 2D/3D documentation, and homologation support.
-              </p>
-            </div>
-            <div class="md:col-span-1 flex justify-end">
-              <span id="arrow-item-3" class="font-mono text-lg text-brand-dim group-hover:text-brand-orange transition-transform duration-200">
-                &rarr;
-              </span>
-            </div>
-          </div>
-          <div id="details-item-3" class="hidden mt-4 pt-4 border-t border-dashed border-brand-dark/20 text-xs font-mono text-brand-dim">
-            <span class="text-brand-orange font-bold uppercase">&bull; DELIVERABLES:</span> CAD models (STEP/IGES), complete workshop manufacturing drawings, material certs (3.1/3.2), finite element structural verification reports.
-          </div>
-        </div>
-
-        <!-- Item 4: Logistics & Depot Support -->
-        <div class="py-6 sm:py-8 group hover:bg-white/60 transition-colors px-2 sm:px-4 cursor-pointer" onclick="toggleDetails('item-4')">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 items-baseline">
-            <div class="md:col-span-4">
-              <h3 class="font-display font-bold text-xl sm:text-2xl uppercase tracking-tight group-hover:text-brand-orange transition-colors">
-                LOGISTICS & DEPOT SUPPORT
-              </h3>
-            </div>
-            <div class="md:col-span-7">
-              <p class="text-sm sm:text-base text-brand-dim leading-relaxed">
-                Just-in-time delivery, consignment stock agreements, critical parts buffer storage in Poland, and express dispatch for AOG / vehicle-down scenarios across Europe.
-              </p>
-            </div>
-            <div class="md:col-span-1 flex justify-end">
-              <span id="arrow-item-4" class="font-mono text-lg text-brand-dim group-hover:text-brand-orange transition-transform duration-200">
-                &rarr;
-              </span>
-            </div>
-          </div>
-          <div id="details-item-4" class="hidden mt-4 pt-4 border-t border-dashed border-brand-dark/20 text-xs font-mono text-brand-dim">
-            <span class="text-brand-orange font-bold uppercase">&bull; GUARANTEE:</span> 24/7 emergency dispatch line, palletized bonded warehousing, direct tracking via our dedicated logistics desk.
-          </div>
-        </div>
-
-        <!-- Item 5: Obsolete & Hard-to-Find -->
-        <div class="py-6 sm:py-8 group hover:bg-white/60 transition-colors px-2 sm:px-4 cursor-pointer" onclick="toggleDetails('item-5')">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 items-baseline">
-            <div class="md:col-span-4">
-              <h3 class="font-display font-bold text-xl sm:text-2xl uppercase tracking-tight group-hover:text-brand-orange transition-colors">
-                OBSOLETE & HARD-TO-FIND
-              </h3>
-            </div>
-            <div class="md:col-span-7">
-              <p class="text-sm sm:text-base text-brand-dim leading-relaxed">
-                Comprehensive international sourcing network and licensed remanufacturing of discontinued rail components for classic and mid-generation rolling stock fleets.
-              </p>
-            </div>
-            <div class="md:col-span-1 flex justify-end">
-              <span id="arrow-item-5" class="font-mono text-lg text-brand-dim group-hover:text-brand-orange transition-transform duration-200">
-                &rarr;
-              </span>
-            </div>
-          </div>
-          <div id="details-item-5" class="hidden mt-4 pt-4 border-t border-dashed border-brand-dark/20 text-xs font-mono text-brand-dim">
-            <span class="text-brand-orange font-bold uppercase">&bull; COVERAGE:</span> Electric locomotives, diesel shunter units, legacy EMUs, regional passenger coaches, freight cars.
-          </div>
-        </div>
-
-      </div>
     </section>
 
-    <!-- ================= COMPANY SECTION ================= -->
-    <section id="company" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 border-b border-brand-dark/40">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <div class="lg:col-span-5">
-          <span class="font-mono text-xs text-brand-dim uppercase tracking-wider block mb-2">ABOUT THE ORGANISATION</span>
-          <h2 class="font-display font-extrabold text-3xl sm:text-4xl uppercase tracking-tight">
-            ENGINEERED FOR ROLLING STOCK RELIABILITY
-          </h2>
-          <p class="mt-4 text-brand-dim text-sm sm:text-base leading-relaxed">
-            TechnicRail operates at the intersection of traditional precision engineering and modern rolling stock logistics. Headquartered strategically in Poland with rapid transit links across Central and Western Europe, we minimize fleet downtime for railway operators, leasing companies, and maintenance depots.
-          </p>
-        </div>
+    <footer>
+        <p>&copy; 2026 TechnicRail.pl. Alla rättigheter förbehållna.</p>
+        <p>Industrial Solutions | Part Sales | Service & Repair</p>
+    </footer>
 
-        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          
-          <div class="p-6 bg-white border border-brand-dark shadow-sm">
-            <div class="font-mono text-xs text-brand-orange font-bold mb-1">01 / QUALITY STANDARDS</div>
-            <div class="font-display font-bold text-lg uppercase text-brand-dark">TSI & EN COMPLIANCE</div>
-            <p class="mt-2 text-xs text-brand-dim leading-normal">
-              All overhauled assemblies and newly fabricated components are produced in strict accordance with European railway standards (EN 15085, EN 10204 3.1).
-            </p>
-          </div>
-
-          <div class="p-6 bg-white border border-brand-dark shadow-sm">
-            <div class="font-mono text-xs text-brand-orange font-bold mb-1">02 / LOGISTICS HUB</div>
-            <div class="font-display font-bold text-lg uppercase text-brand-dark">CENTRAL EUROPE POSITION</div>
-            <p class="mt-2 text-xs text-brand-dim leading-normal">
-              Located in Poland's premier industrial and railway corridor, enabling fast, road and rail-freight dispatch to Germany, Czech Republic, Austria, and Scandinavia.
-            </p>
-          </div>
-
-          <div class="p-6 bg-white border border-brand-dark shadow-sm">
-            <div class="font-mono text-xs text-brand-orange font-bold mb-1">03 / SPECIALIZED TOOLING</div>
-            <div class="font-display font-bold text-lg uppercase text-brand-dark">PRECISION DIAGNOSTICS</div>
-            <p class="mt-2 text-xs text-brand-dim leading-normal">
-              Calibrated test benches for pneumatic brake distributors, hydrostatic dampers, ultrasonic non-destructive testing (NDT), and optical dimension verification.
-            </p>
-          </div>
-
-          <div class="p-6 bg-white border border-brand-dark shadow-sm">
-            <div class="font-mono text-xs text-brand-orange font-bold mb-1">04 / RAPID SOURCING</div>
-            <div class="font-display font-bold text-lg uppercase text-brand-dark">ACTIVE OEM CHANNELS</div>
-            <p class="mt-2 text-xs text-brand-dim leading-normal">
-              Direct supplier agreements with leading European rolling stock manufacturers and OEM component producers for verified origin and warranties.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= CONTACT & DIRECTORY SECTION ================= -->
-    <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-      
-      <div class="border-b-2 border-brand-dark pb-4 mb-8">
-        <h2 class="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight">
-          GET IN TOUCH
-        </h2>
-        <p class="font-mono text-xs sm:text-sm text-brand-dim tracking-wider uppercase mt-1">
-          DIRECT CONTACT POINTS FOR YOUR INQUIRIES
-        </p>
-      </div>
-
-      <!-- Department Contact Cards matching actual Zoho email accounts -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-        
-        <!-- General Inquiries -->
-        <div class="p-5 bg-white border-2 border-brand-dark hover:border-brand-orange transition-colors">
-          <div class="font-mono text-[10px] text-brand-dim uppercase tracking-wider mb-1">HEADQUARTERS & GENERAL</div>
-          <div class="font-display font-bold text-lg text-brand-dark mb-2">GENERAL INQUIRY</div>
-          <a href="mailto:info@technicrail.pl" class="font-mono text-xs text-brand-orange font-semibold hover:underline break-all block">
-            info@technicrail.pl
-          </a>
-          <span class="text-[11px] text-brand-dim mt-2 block">General requests, technical questions & administration.</span>
-        </div>
-
-        <!-- Sales Department -->
-        <div class="p-5 bg-white border-2 border-brand-dark hover:border-brand-orange transition-colors">
-          <div class="font-mono text-[10px] text-brand-dim uppercase tracking-wider mb-1">COMMERCIAL & QUOTATIONS</div>
-          <div class="font-display font-bold text-lg text-brand-dark mb-2">SALES DESK</div>
-          <a href="mailto:sales@technicrail.pl" class="font-mono text-xs text-brand-orange font-semibold hover:underline break-all block">
-            sales@technicrail.pl
-          </a>
-          <span class="text-[11px] text-brand-dim mt-2 block">RFQs, tenders, framework contracts & project estimates.</span>
-        </div>
-
-        <!-- Orders & Procurement -->
-        <div class="p-5 bg-white border-2 border-brand-dark hover:border-brand-orange transition-colors">
-          <div class="font-mono text-[10px] text-brand-dim uppercase tracking-wider mb-1">PURCHASING & ORDERS</div>
-          <div class="font-display font-bold text-lg text-brand-dark mb-2">ORDERS DESK</div>
-          <a href="mailto:order@technicrail.pl" class="font-mono text-xs text-brand-orange font-semibold hover:underline break-all block">
-            order@technicrail.pl
-          </a>
-          <span class="text-[11px] text-brand-dim mt-2 block">Purchase order placements, invoices & vendor confirmations.</span>
-        </div>
-
-        <!-- Logistics Department -->
-        <div class="p-5 bg-white border-2 border-brand-dark hover:border-brand-orange transition-colors">
-          <div class="font-mono text-[10px] text-brand-dim uppercase tracking-wider mb-1">SUPPLY CHAIN & DISPATCH</div>
-          <div class="font-display font-bold text-lg text-brand-dark mb-2">LOGISTICS</div>
-          <a href="mailto:logistic@technicrail.pl" class="font-mono text-xs text-brand-orange font-semibold hover:underline break-all block">
-            logistic@technicrail.pl
-          </a>
-          <span class="text-[11px] text-brand-dim mt-2 block">Shipment tracking, freight coordination & customs handling.</span>
-        </div>
-
-      </div>
-
-      <!-- Quick Message Form -->
-      <div class="bg-white border-2 border-brand-dark p-6 sm:p-10 crosshair-corner shadow-lg">
-        <h3 class="font-display font-bold text-2xl uppercase tracking-tight mb-2">
-          SEND SPECIFICATION OR PART REQUEST
-        </h3>
-        <p class="text-sm text-brand-dim mb-6">
-          Submit your vehicle type, part number or required maintenance scope. Our engineering desk will review and respond within 24 hours.
-        </p>
-
-        <form id="inquiry-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block font-mono text-xs font-semibold uppercase text-brand-dark mb-1">Your Name / Company *</label>
-              <input type="text" required placeholder="e.g. Rail Cargo Logistics Sp. z o.o." class="w-full px-4 py-3 border border-brand-dark/40 font-sans text-sm focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none bg-brand-surface">
-            </div>
-            <div>
-              <label class="block font-mono text-xs font-semibold uppercase text-brand-dark mb-1">Email Address *</label>
-              <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 border border-brand-dark/40 font-sans text-sm focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none bg-brand-surface">
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block font-mono text-xs font-semibold uppercase text-brand-dark mb-1">Target Department</label>
-              <select class="w-full px-4 py-3 border border-brand-dark/40 font-sans text-sm focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none bg-brand-surface">
-                <option value="sales@technicrail.pl">Sales & RFQs (sales@technicrail.pl)</option>
-                <option value="info@technicrail.pl">General Engineering (info@technicrail.pl)</option>
-                <option value="order@technicrail.pl">Purchase Orders (order@technicrail.pl)</option>
-                <option value="logistic@technicrail.pl">Depot Logistics (logistic@technicrail.pl)</option>
-              </select>
-            </div>
-            <div>
-              <label class="block font-mono text-xs font-semibold uppercase text-brand-dark mb-1">Rolling Stock / Part Number</label>
-              <input type="text" placeholder="e.g. FLIRT EMU / Brake Disc 640mm" class="w-full px-4 py-3 border border-brand-dark/40 font-sans text-sm focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none bg-brand-surface">
-            </div>
-          </div>
-
-          <div>
-            <label class="block font-mono text-xs font-semibold uppercase text-brand-dark mb-1">Inquiry Scope & Details *</label>
-            <textarea required rows="4" placeholder="Describe the part requirement, required lead time, quantity or maintenance challenge..." class="w-full px-4 py-3 border border-brand-dark/40 font-sans text-sm focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none bg-brand-surface"></textarea>
-          </div>
-
-          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-            <span class="text-xs font-mono text-brand-dim">
-              Direct secure dispatch to TechnicRail encrypted European servers.
-            </span>
-            <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-brand-orange hover:bg-brand-orangeHover text-white font-display font-bold text-sm tracking-wider uppercase transition-colors shadow">
-              DISPATCH INQUIRY &rarr;
-            </button>
-          </div>
-        </form>
-
-        <!-- Notification container after submit -->
-        <div id="form-feedback" class="hidden mt-4 p-4 border border-brand-orange bg-brand-orange/10 text-brand-dark text-sm font-mono">
-          ✓ Thank you. Your inquiry has been routed to our technical engineering desk. We will respond promptly to your email.
-        </div>
-      </div>
-
-    </section>
-  </main>
-
-  <!-- ================= MODAL FOR 'SEND AN INQUIRY' ================= -->
-  <div id="inquiry-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-white border-2 border-brand-dark max-w-lg w-full p-6 sm:p-8 relative crosshair-corner shadow-2xl">
-      <button onclick="closeContactModal()" class="absolute top-4 right-4 text-brand-dark hover:text-brand-orange font-mono text-2xl font-bold leading-none">
-        &times;
-      </button>
-
-      <div class="mb-4">
-        <span class="font-mono text-xs text-brand-orange font-bold uppercase">RAPID COMMUNICATION</span>
-        <h3 class="font-display font-bold text-2xl uppercase mt-1">DIRECT INQUIRY</h3>
-      </div>
-
-      <p class="text-xs text-brand-dim mb-4">
-        You can reach our departments directly by clicking any address below or emailing us directly:
-      </p>
-
-      <div class="space-y-2 mb-6 font-mono text-xs">
-        <a href="mailto:sales@technicrail.pl" class="p-3 bg-brand-surface border border-brand-dark/20 flex justify-between items-center hover:border-brand-orange group">
-          <span class="font-bold text-brand-dark">Sales & Quotations:</span>
-          <span class="text-brand-orange group-hover:underline">sales@technicrail.pl</span>
-        </a>
-        <a href="mailto:info@technicrail.pl" class="p-3 bg-brand-surface border border-brand-dark/20 flex justify-between items-center hover:border-brand-orange group">
-          <span class="font-bold text-brand-dark">General & Engineering:</span>
-          <span class="text-brand-orange group-hover:underline">info@technicrail.pl</span>
-        </a>
-        <a href="mailto:order@technicrail.pl" class="p-3 bg-brand-surface border border-brand-dark/20 flex justify-between items-center hover:border-brand-orange group">
-          <span class="font-bold text-brand-dark">Orders & Invoicing:</span>
-          <span class="text-brand-orange group-hover:underline">order@technicrail.pl</span>
-        </a>
-        <a href="mailto:logistic@technicrail.pl" class="p-3 bg-brand-surface border border-brand-dark/20 flex justify-between items-center hover:border-brand-orange group">
-          <span class="font-bold text-brand-dark">Dispatch & Transport:</span>
-          <span class="text-brand-orange group-hover:underline">logistic@technicrail.pl</span>
-        </a>
-      </div>
-
-      <button onclick="closeContactModal(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'});" class="w-full py-3 bg-brand-dark text-white font-display font-bold text-xs uppercase tracking-wider hover:bg-brand-orange transition-colors">
-        FILL IN ONLINE SPECIFICATION FORM
-      </button>
-    </div>
-  </div>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="border-t-2 border-brand-dark bg-white mt-12 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-brand-dim">
-      
-      <div class="flex items-center gap-3">
-        <span class="font-display font-bold text-brand-dark text-sm tracking-tight">TECHNICRAIL.PL</span>
-        <span>&bull;</span>
-        <span>POLAND / EUROPEAN UNION</span>
-      </div>
-
-      <div class="text-center md:text-right">
-        &copy; <span id="current-year">2026</span> TechnicRail. All rights reserved. Rolling stock parts, maintenance & engineering.
-      </div>
-      
-    </div>
-  </footer>
-
-  <!-- ================= JAVASCRIPT ================= -->
-  <script>
-    // Set dynamic current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // Toggle detail view for offer items
-    function toggleDetails(id) {
-      const detailEl = document.getElementById('details-' + id);
-      const arrowEl = document.getElementById('arrow-' + id);
-      
-      if (detailEl.classList.contains('hidden')) {
-        detailEl.classList.remove('hidden');
-        arrowEl.style.transform = 'rotate(90deg)';
-        arrowEl.classList.add('text-brand-orange');
-      } else {
-        detailEl.classList.add('hidden');
-        arrowEl.style.transform = 'rotate(0deg)';
-        arrowEl.classList.remove('text-brand-orange');
-      }
-    }
-
-    // Modal controls
-    function openContactModal() {
-      const modal = document.getElementById('inquiry-modal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-
-    function closeContactModal() {
-      const modal = document.getElementById('inquiry-modal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    }
-
-    // Close modal on click outside
-    window.addEventListener('click', function(e) {
-      const modal = document.getElementById('inquiry-modal');
-      if (e.target === modal) {
-        closeContactModal();
-      }
-    });
-
-    // Form feedback handler
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const feedback = document.getElementById('form-feedback');
-      feedback.classList.remove('hidden');
-      e.target.reset();
-      feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  </script>
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
