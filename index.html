@@ -19,6 +19,22 @@
     
     <!-- Förladdning av originalbilden -->
     <link rel="preload" as="image" href="https://technicrail-parts-and-plans.lovable.app/assets/hero-rail-CrA_Cda5.jpg">
+
+    <style>
+        /* Fix för horisontell Offer-layout */
+        .offer-row-custom {
+            display: grid !important;
+            grid-template-columns: 360px 1fr 40px !important;
+            align-items: baseline !important;
+            gap: 2.5rem !important;
+        }
+        @media (max-width: 900px) {
+            .offer-row-custom {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+        }
+    </style>
 </head>
 <body class="min-h-screen bg-background text-foreground">
 
@@ -73,33 +89,32 @@
         <div class="mx-auto max-w-7xl px-6 py-20">
             <div class="flex items-end justify-between gap-6 border-b border-foreground pb-6">
                 <h2 class="text-3xl font-extrabold uppercase sm:text-5xl">Offer</h2>
-                <span class="font-mono-tech text-xs uppercase text-muted-foreground">05 items</span>
             </div>
             <ul>
-                <li class="group grid gap-4 border-b border-border py-8 transition-colors hover:bg-card sm:grid-cols-12 sm:items-baseline">
-                    <h3 class="text-2xl font-bold uppercase sm:col-span-5 sm:text-3xl">Spare parts</h3>
-                    <p class="leading-relaxed text-muted-foreground sm:col-span-6">Components for rolling stock: bogie parts, wheelsets, brake equipment, couplers, interior fittings. Sourced, stocked and shipped.</p>
-                    <a href="#kontakt" class="font-mono-tech text-sm sm:col-span-1 sm:text-right group-hover:text-primary" aria-label="Ask about Spare parts">→</a>
+                <li class="group offer-row-custom border-b border-border py-8 transition-colors hover:bg-card">
+                    <h3 class="text-2xl font-bold uppercase sm:text-3xl">Spare parts</h3>
+                    <p class="leading-relaxed text-muted-foreground">Components for rolling stock: bogie parts, wheelsets, brake equipment, couplers, interior fittings. Sourced, stocked and shipped.</p>
+                    <a href="#kontakt" class="font-mono-tech text-sm text-right group-hover:text-primary" aria-label="Ask about Spare parts">→</a>
                 </li>
-                <li class="group grid gap-4 border-b border-border py-8 transition-colors hover:bg-card sm:grid-cols-12 sm:items-baseline">
-                    <h3 class="text-2xl font-bold uppercase sm:col-span-5 sm:text-3xl">Service &amp; repair</h3>
-                    <p class="leading-relaxed text-muted-foreground sm:col-span-6">Maintenance, overhaul and repair of vehicles and assemblies — in our workshop or at your depot.</p>
-                    <a href="#kontakt" class="font-mono-tech text-sm sm:col-span-1 sm:text-right group-hover:text-primary" aria-label="Ask about Service &amp; repair">→</a>
+                <li class="group offer-row-custom border-b border-border py-8 transition-colors hover:bg-card">
+                    <h3 class="text-2xl font-bold uppercase sm:text-3xl">Service &amp; repair</h3>
+                    <p class="leading-relaxed text-muted-foreground">Maintenance, overhaul and repair of vehicles and assemblies — in our workshop or at your depot.</p>
+                    <a href="#kontakt" class="font-mono-tech text-sm text-right group-hover:text-primary" aria-label="Ask about Service &amp; repair">→</a>
                 </li>
-                <li class="group grid gap-4 border-b border-border py-8 transition-colors hover:bg-card sm:grid-cols-12 sm:items-baseline">
-                    <h3 class="text-2xl font-bold uppercase sm:col-span-5 sm:text-3xl">Production</h3>
-                    <p class="leading-relaxed text-muted-foreground sm:col-span-6">Machining, welding and assembly of steel structures and mechanical parts, made to drawing.</p>
-                    <a href="#kontakt" class="font-mono-tech text-sm sm:col-span-1 sm:text-right group-hover:text-primary" aria-label="Ask about Production">→</a>
+                <li class="group offer-row-custom border-b border-border py-8 transition-colors hover:bg-card">
+                    <h3 class="text-2xl font-bold uppercase sm:text-3xl">Production</h3>
+                    <p class="leading-relaxed text-muted-foreground">Machining, welding and assembly of steel structures and mechanical parts, made to drawing.</p>
+                    <a href="#kontakt" class="font-mono-tech text-sm text-right group-hover:text-primary" aria-label="Ask about Production">→</a>
                 </li>
-                <li class="group grid gap-4 border-b border-border py-8 transition-colors hover:bg-card sm:grid-cols-12 sm:items-baseline">
-                    <h3 class="text-2xl font-bold uppercase sm:col-span-5 sm:text-3xl">Solutions</h3>
-                    <p class="leading-relaxed text-muted-foreground sm:col-span-6">Modernization, retrofit and technical support for operators and manufacturers.</p>
-                    <a href="#kontakt" class="font-mono-tech text-sm sm:col-span-1 sm:text-right group-hover:text-primary" aria-label="Ask about Solutions">→</a>
+                <li class="group offer-row-custom border-b border-border py-8 transition-colors hover:bg-card">
+                    <h3 class="text-2xl font-bold uppercase sm:text-3xl">Solutions</h3>
+                    <p class="leading-relaxed text-muted-foreground">Modernization, retrofit and technical support for operators and manufacturers.</p>
+                    <a href="#kontakt" class="font-mono-tech text-sm text-right group-hover:text-primary" aria-label="Ask about Solutions">→</a>
                 </li>
-                <li class="group grid gap-4 border-b border-border py-8 transition-colors hover:bg-card sm:grid-cols-12 sm:items-baseline">
-                    <h3 class="text-2xl font-bold uppercase sm:col-span-5 sm:text-3xl">CAD</h3>
-                    <p class="leading-relaxed text-muted-foreground sm:col-span-6">3D models, 2D documentation and reverse engineering of worn or discontinued parts.</p>
-                    <a href="#kontakt" class="font-mono-tech text-sm sm:col-span-1 sm:text-right group-hover:text-primary" aria-label="Ask about CAD">→</a>
+                <li class="group offer-row-custom border-b border-border py-8 transition-colors hover:bg-card">
+                    <h3 class="text-2xl font-bold uppercase sm:text-3xl">CAD</h3>
+                    <p class="leading-relaxed text-muted-foreground">3D models, 2D documentation and reverse engineering of worn or discontinued parts.</p>
+                    <a href="#kontakt" class="font-mono-tech text-sm text-right group-hover:text-primary" aria-label="Ask about CAD">→</a>
                 </li>
             </ul>
         </div>
