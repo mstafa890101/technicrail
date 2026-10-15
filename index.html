@@ -6,8 +6,8 @@
     <title>TechnicRail — Railway Spare Parts, Service &amp; Engineering</title>
     <meta name="description" content="TechnicRail delivers railway spare parts, service &amp; repair, production, engineering solutions and CAD design for the rail industry.">
     
-    <!-- Ny Favicon: Snabbtåget istället för Lovables hjärta -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 70'%3E%3Cpath d='M10 58 L90 58' stroke='%23111' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M20 64 L16 54 M36 64 L32 54 M52 64 L48 54 M68 64 L64 54 M84 64 L80 54' stroke='%23111' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M16 50 C18 32 34 16 62 16 L82 16 C86 26 80 42 62 50 Z' fill='%23111'/%3E%3Cpath d='M38 23 C52 23 64 28 66 36 L30 36 C32 28 35 23 38 23 Z' fill='%23fff'/%3E%3Cpath d='M26 42 L78 42 C74 47 66 48 58 48 L22 48 Z' fill='%23f57200'/%3E%3C/svg%3E">
+    <!-- Favicon: Aerodynamiskt snabbtåg på räls -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 90'%3E%3Cpath d='M25 80 L60 55 M38 85 L73 60 M55 88 L88 66' stroke='%23111' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M20 78 L95 60' stroke='%23111' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M35 88 L110 70' stroke='%23111' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M42 54 C40 35 55 22 75 22 C95 22 110 32 115 42 L80 58 C62 62 46 62 42 54 Z' fill='%23111'/%3E%3Cpath d='M50 48 C48 36 58 28 72 26 L108 38 C90 44 70 48 50 48 Z' fill='%23fff'/%3E%3Cpath d='M58 35 L68 28 L74 38 L62 43 Z' fill='%23111'/%3E%3Cpath d='M54 50 C68 47 90 40 112 36 L115 40 C95 44 72 52 52 54 Z' fill='%23f57200'/%3E%3C/svg%3E">
     
     <!-- Typsnitt: Archivo & IBM Plex Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,6 @@
     <link rel="preload" as="image" href="https://technicrail-parts-and-plans.lovable.app/assets/hero-rail-CrA_Cda5.jpg">
 
     <style>
-        /* Fix för horisontell Offer-layout */
         .offer-row-custom {
             display: grid !important;
             grid-template-columns: 360px 1fr 40px !important;
@@ -34,6 +33,12 @@
                 gap: 1rem !important;
             }
         }
+        .train-brand-logo {
+            height: 38px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body class="min-h-screen bg-background text-foreground">
@@ -41,16 +46,29 @@
     <!-- HEADER -->
     <header class="border-b border-foreground sticky top-0 z-50 bg-background">
         <div class="mx-auto flex max-w-7xl items-stretch justify-between px-6">
-            <a href="#top" class="font-display py-5 text-xl font-extrabold uppercase tracking-tight flex items-center gap-3">
-                <!-- Tåg-ikonen från din bild -->
-                <svg class="h-7 w-auto" viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 58 L90 58" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M20 64 L16 54 M36 64 L32 54 M52 64 L48 54 M68 64 L64 54 M84 64 L80 54" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M16 50 C18 32 34 16 62 16 L82 16 C86 26 80 42 62 50 Z" fill="currentColor"/>
-                    <path d="M38 23 C52 23 64 28 66 36 L30 36 C32 28 35 23 38 23 Z" fill="#ffffff"/>
-                    <path d="M26 42 L78 42 C74 47 66 48 58 48 L22 48 Z" fill="#f57200"/>
+            <a href="#top" class="font-display py-4 text-xl font-extrabold uppercase tracking-tight flex items-center gap-3">
+                <!-- Tåg-logotyp baserad på originalillustrationen -->
+                <svg class="train-brand-logo" viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Räls och sliprar i perspektiv -->
+                    <path d="M22 92 L62 66" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M40 96 L80 72" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M60 100 L98 78" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M82 102 L116 84" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M15 88 L125 64" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M38 102 L145 76" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+                    <!-- Tågkroppens mörka bas -->
+                    <path d="M45 68 C42 46 58 30 84 30 C114 30 148 44 154 54 L102 74 C78 78 52 78 45 68 Z" fill="#111111"/>
+                    <!-- Vit kaross -->
+                    <path d="M56 60 C53 44 68 34 86 33 L146 48 C124 55 96 61 68 62 Z" fill="#ffffff"/>
+                    <!-- Svart nos / fönsterparti -->
+                    <path d="M66 43 C64 36 72 34 78 34 L88 47 L68 53 Z" fill="#111111"/>
+                    <path d="M72 38 L84 46" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+                    <!-- Övre orange linje -->
+                    <path d="M84 34 C104 35 128 41 150 48 L146 51 C126 45 102 40 84 37 Z" fill="#f57200"/>
+                    <!-- Nedre orange linje -->
+                    <path d="M68 64 C88 61 116 54 148 49 L144 53 C114 58 86 65 64 66 Z" fill="#f57200"/>
                 </svg>
-                TechnicRail<span class="text-primary">.pl</span>
+                TECHNICRAIL<span class="text-primary">.PL</span>
             </a>
             <nav class="font-mono-tech hidden items-stretch text-xs uppercase md:flex">
                 <a href="#oferta" class="flex items-center border-l border-foreground px-6 hover:bg-ink hover:text-ink-foreground">Offer</a>
@@ -72,15 +90,10 @@
                     <a href="#oferta" class="border border-l-0 border-foreground px-6 py-3 text-sm font-semibold uppercase hover:bg-secondary">See the offer</a>
                 </div>
             </div>
-            <figure class="relative pb-16 lg:col-span-5 lg:py-24 lg:pl-12">
-                <div class="border border-foreground p-2">
-                    <img src="https://technicrail-parts-and-plans.lovable.app/assets/hero-rail-CrA_Cda5.jpg" alt="Rail vehicle in the TechnicRail workshop" class="aspect-[4/5] w-full object-cover grayscale-[35%]" width="1920" height="1088">
-                </div>
-                <figcaption class="font-mono-tech mt-3 flex justify-between text-[11px] uppercase text-muted-foreground">
-                    <span>Fig. 1 — Workshop</span>
-                    <span>Scale 1:1</span>
-                </figcaption>
-            </figure>
+            <!-- Bildsektion utan ram och utan undertext -->
+            <div class="relative flex items-center justify-center pb-16 lg:col-span-5 lg:py-24 lg:pl-12">
+                <img src="https://technicrail-parts-and-plans.lovable.app/assets/hero-rail-CrA_Cda5.jpg" alt="Rail vehicle in the TechnicRail workshop" class="aspect-[4/5] w-full object-cover grayscale-[35%]" width="1920" height="1088">
+            </div>
         </div>
     </section>
 
@@ -143,12 +156,14 @@
                     </div>
                     <div class="flex gap-6 border-b border-border pb-4">
                         <dt class="w-20 uppercase text-muted-foreground">Phone</dt>
-                        <dd>+48 000 000 000</dd>
+                        <dd><a href="tel:+48510797342" class="hover:text-primary">+48 510 797 342</a></dd>
                     </div>
                     <div class="flex gap-6 border-b border-border pb-4">
-                        <dt class="w-20 uppercase text-muted-foreground">Address</dt>
-                        <dd>Poland</dd>
-                    </div>
+    <dt class="w-20 uppercase text-muted-foreground">Address</dt>
+    <dd>Jeżewo-Wesel 39<br>
+    09-140 Raciąż<br>
+    Poland</dd>
+</div>
                 </dl>
             </div>
             <form class="border border-foreground bg-card p-8 lg:col-span-6 lg:col-start-7">
